@@ -1,8 +1,8 @@
 import React from 'react';
-const CameraSelector = ({ onChange }) => {
+const CameraSelector = ({ handleChange }) => {
   return (
     <div>
-      <select name="cameras" onChange={onChange}>
+      <select name="cameras" onChange={handleChange}>
         <option value="all">Any</option>
         <option value="FHAZ">Front Hazard Avoidance Camera/</option>
         <option value="NAVCAM">Navigation Camera</option>
