@@ -1,4 +1,4 @@
-import { SET_CAM, SET_DATE } from './types';
+import { SET_CAM, SET_DATE, SET_ROVER } from './types';
 
 export default (state, action) => {
   switch (action.type) {
@@ -11,6 +11,11 @@ export default (state, action) => {
       return {
         ...state,
         date: action.payload
+      };
+    case SET_ROVER:
+      return {
+        ...state,
+        rover: action.payload
       };
     default:
       return state;
