@@ -2,13 +2,14 @@ import React, { useReducer } from 'react';
 import PropTypes from 'prop-types';
 import QueryContext from './queryContext';
 import queryReducer from './queryReducer';
-import SET_CAM from './types';
+import { SET_CAM, SET_DATE } from './types';
 
 const QueryState = props => {
   const { children } = props;
 
   const initialState = {
-    cam: 'all'
+    cam: 'all',
+    date: null
   };
   const [state, dispatch] = useReducer(queryReducer, initialState);
 
@@ -19,11 +20,20 @@ const QueryState = props => {
     });
   };
 
+  const setDate = input => {
+    dispatch({
+      type: SET_DATE,
+      payload: input
+    });
+  };
+
   return (
     <QueryContext.Provider
       value={{
         cam: state.cam,
-        setCam
+        date: state.date,
+        setCam,
+        setDate
       }}
     >
       {children}

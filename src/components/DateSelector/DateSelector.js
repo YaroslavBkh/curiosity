@@ -3,12 +3,12 @@ import QueryContext from '../../context/queryContext';
 
 const DateSelector = () => {
   const queryContext = useContext(QueryContext);
-  const { setCam } = queryContext;
+  const { setDate } = queryContext;
 
-  // const handleChange = e => {
-  //   setCam(e.target.value);
-  // };
-  return <input type="date" />;
+  const handleChange = e => {
+    setDate(e.target.value);
+  };
+  return <input type="date" onInput={handleChange} />;
 };
 
 export default DateSelector;
