@@ -1,8 +1,9 @@
 import React, { useReducer } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import QueryContext from './queryContext';
 import queryReducer from './queryReducer';
-import { SET_CAM, SET_DATE, SET_ROVER } from './types';
+import { SET_CAM, SET_DATE, SET_ROVER, GET_MANIFEST } from './types';
 
 const QueryState = props => {
   const { children } = props;
@@ -10,7 +11,8 @@ const QueryState = props => {
   const initialState = {
     cam: 'all',
     date: null,
-    rover: 'Curiosity'
+    rover: 'Curiosity',
+    manifest: null
   };
   const [state, dispatch] = useReducer(queryReducer, initialState);
 
@@ -35,15 +37,27 @@ const QueryState = props => {
     });
   };
 
+  const getManifest = async rover => {
+    const res = await axios.get(
+      `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=WsCYjncMpMrMSOgnpMTXB33ATSzk0v2spwCccz4d`
+    );
+    dispatch({
+      type: GET_MANIFEST,
+      payload: res.data.photo_manifest
+    });
+  };
+
   return (
     <QueryContext.Provider
       value={{
         cam: state.cam,
         date: state.date,
         rover: state.rover,
+        manifest: state.manifest,
         setCam,
         setDate,
-        setRover
+        setRover,
+        getManifest
       }}
     >
       {children}

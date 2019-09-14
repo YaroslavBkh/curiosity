@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from 'react';
-import axios from 'axios';
 import './App.css';
 import QueryContext from '../context/queryContext';
 import CameraSelector from '../components/selectors/CameraSelector/CameraSelector';
@@ -8,17 +7,10 @@ import RoverSelector from '../components/selectors/RoverSelector/RoverSelector';
 
 function App() {
   const queryContext = useContext(QueryContext);
-  const { rover } = queryContext;
+  const { rover, getManifest } = queryContext;
 
   useEffect(() => {
-    const fetchManifest = async () => {
-      const res = await axios.get(
-        `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=WsCYjncMpMrMSOgnpMTXB33ATSzk0v2spwCccz4d`
-      );
-      console.log(res.data);
-    };
-
-    fetchManifest();
+    getManifest(rover);
   }, [rover]);
 
   return (
