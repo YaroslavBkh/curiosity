@@ -1,5 +1,13 @@
-import React from 'react';
-const CameraSelector = ({ handleChange }) => {
+import React, { useContext } from 'react';
+import CamContext from '../../context/camContext';
+
+const CameraSelector = () => {
+  const camContext = useContext(CamContext);
+  const { setCam } = camContext;
+
+  const handleChange = e => {
+    setCam(e.target.value);
+  };
   return (
     <div>
       <select name="cameras" onChange={handleChange}>
@@ -13,8 +21,7 @@ const CameraSelector = ({ handleChange }) => {
         <option value="RHAZ">Rear Hazard Avoidance Camera</option>
       </select>
     </div>
-  )
-}
+  );
+};
 
 export default CameraSelector;
-
