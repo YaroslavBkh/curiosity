@@ -1,16 +1,16 @@
 import React, { useReducer } from 'react';
 import PropTypes from 'prop-types';
-import TestContext from './camContext';
-import camReducer from './camReducer';
+import QueryContext from './queryContext';
+import queryReducer from './queryReducer';
 import SET_CAM from './types';
 
-const CamState = props => {
+const QueryState = props => {
   const { children } = props;
 
   const initialState = {
     cam: 'all'
   };
-  const [state, dispatch] = useReducer(camReducer, initialState);
+  const [state, dispatch] = useReducer(queryReducer, initialState);
 
   const setCam = input => {
     dispatch({
@@ -20,19 +20,19 @@ const CamState = props => {
   };
 
   return (
-    <TestContext.Provider
+    <QueryContext.Provider
       value={{
         cam: state.cam,
         setCam
       }}
     >
       {children}
-    </TestContext.Provider>
+    </QueryContext.Provider>
   );
 };
 
-CamState.propTypes = {
+QueryState.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export default CamState;
+export default QueryState;

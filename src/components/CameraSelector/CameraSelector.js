@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import CamContext from '../../context/camContext';
+import QueryContext from '../../context/queryContext';
 
 const CameraSelector = () => {
-  const camContext = useContext(CamContext);
-  const { setCam } = camContext;
+  const queryContext = useContext(QueryContext);
+  const { setCam } = queryContext;
 
   const handleChange = e => {
     setCam(e.target.value);
