@@ -18,7 +18,9 @@
     ],
     "rules": {
         "prettier/prettier": "error",
-        "react/jsx-one-expression-per-line": "off",
-        "react/jsx-filename-extension": "off"
+        "react/jsx-one-expression-per-line": 0,
+        "react/jsx-filename-extension": 0,
+        "react/jsx-uses-react": 1,
+        "react/jsx-uses-vars": 1
     }
 }
