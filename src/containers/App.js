@@ -1,21 +1,24 @@
-import React, { useContext } from 'react';
-// import axios from 'axios';
+import React, { useContext, useEffect } from 'react';
 import './App.css';
-import CamContext from '../context/camContext';
-import CameraSelector from '../components/CameraSelector/CameraSelector';
+import QueryContext from '../context/queryContext';
+import CameraSelector from '../components/selectors/CameraSelector/CameraSelector';
+import DateSelector from '../components/selectors/DateSelector/DateSelector';
+import RoverSelector from '../components/selectors/RoverSelector/RoverSelector';
 
 function App() {
-  const camContext = useContext(CamContext);
-  const { setCam } = camContext;
+  const queryContext = useContext(QueryContext);
+  const { rover, getManifest } = queryContext;
 
-  const passCamera = event => {
-    setCam(event.target.value);
-  };
+  useEffect(() => {
+    getManifest(rover);
+  }, [rover]);
 
   return (
     <div className="App">
       <h1>Les do dis</h1>
-      <CameraSelector handleChange={passCamera} />
+      <CameraSelector />
+      <DateSelector />
+      <RoverSelector />
     </div>
   );
 }

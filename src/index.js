@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import CamState from './context/CamState';
+import QueryState from './context/QueryState';
 import App from './containers/App';
 import * as serviceWorker from './serviceWorker';
 
 const root = document.getElementById('root');
 ReactDOM.render(
-  <CamState>
+  <QueryState>
     <App />
-  </CamState>,
+  </QueryState>,
   root
 );
 
