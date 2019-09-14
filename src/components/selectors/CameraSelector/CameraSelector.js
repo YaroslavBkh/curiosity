@@ -8,7 +8,9 @@ const CameraSelector = () => {
   const handleChange = e => {
     setCam(e.target.value);
   };
+
   return (
+    // Display cameras by actual presence on rovers
     <div>
       <select name="cameras" onChange={handleChange}>
         <option value="all">Any</option>
