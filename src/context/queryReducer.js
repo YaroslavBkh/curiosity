@@ -1,4 +1,10 @@
-import { SET_CAM, SET_DATE, SET_ROVER, GET_MANIFEST } from './types';
+import {
+  SET_CAM,
+  SET_DATE,
+  SET_ROVER,
+  GET_MANIFEST,
+  GET_PHOTOS
+} from './types';
 
 export default (state, action) => {
   switch (action.type) {
@@ -28,6 +34,11 @@ export default (state, action) => {
           max_date: action.payload.max_date,
           total_photos: action.payload.total_photos
         }
+      };
+    case GET_PHOTOS:
+      return {
+        ...state,
+        photos: action.payload
       };
     default:
       return state;

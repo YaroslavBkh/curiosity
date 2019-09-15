@@ -4,6 +4,7 @@ import QueryContext from '../context/queryContext';
 import CameraSelector from '../components/selectors/CameraSelector/CameraSelector';
 import DateSelector from '../components/selectors/DateSelector/DateSelector';
 import RoverSelector from '../components/selectors/RoverSelector/RoverSelector';
+import SearchButton from '../components/SearchButton/SearchButton';
 
 function App() {
   const queryContext = useContext(QueryContext);
@@ -19,6 +20,7 @@ function App() {
       <CameraSelector />
       <DateSelector />
       <RoverSelector />
+      <SearchButton />
     </div>
   );
 }
