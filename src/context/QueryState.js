@@ -6,6 +6,7 @@ import queryReducer from './queryReducer';
 import {
   SET_CAM,
   SET_DATE,
+  SET_SOL,
   SET_ROVER,
   GET_MANIFEST,
   GET_PHOTOS
@@ -17,6 +18,7 @@ const QueryState = props => {
   const initialState = {
     cam: null,
     date: null,
+    sol: null,
     rover: 'Curiosity',
     manifest: null,
     photos: []
@@ -33,6 +35,13 @@ const QueryState = props => {
   const setDate = input => {
     dispatch({
       type: SET_DATE,
+      payload: input
+    });
+  };
+
+  const setSol = input => {
+    dispatch({
+      type: SET_SOL,
       payload: input
     });
   };
@@ -58,8 +67,8 @@ const QueryState = props => {
     const res = await axios.get(
       `https://api.nasa.gov/mars-photos/api/v1/rovers/${state.rover}/photos?${
         state.date ? `earth_date=${state.date}&` : ''
-      }${
-        state.cam ? `camera= ${state.cam}&` : ''
+      }${state.sol ? `sol=${state.sol}&` : ''}${
+        state.cam ? `camera=${state.cam}&` : ''
       }api_key=WsCYjncMpMrMSOgnpMTXB33ATSzk0v2spwCccz4d`
     );
 
@@ -74,11 +83,13 @@ const QueryState = props => {
       value={{
         cam: state.cam,
         date: state.date,
+        sol: state.sol,
         rover: state.rover,
         manifest: state.manifest,
         photos: state.photos,
         setCam,
         setDate,
+        setSol,
         setRover,
         getManifest,
         getPhotos

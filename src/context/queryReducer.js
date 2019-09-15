@@ -1,6 +1,7 @@
 import {
   SET_CAM,
   SET_DATE,
+  SET_SOL,
   SET_ROVER,
   GET_MANIFEST,
   GET_PHOTOS
@@ -16,7 +17,14 @@ export default (state, action) => {
     case SET_DATE:
       return {
         ...state,
-        date: action.payload
+        date: action.payload,
+        sol: null
+      };
+    case SET_SOL:
+      return {
+        ...state,
+        sol: action.payload,
+        date: null
       };
     case SET_ROVER:
       return {
