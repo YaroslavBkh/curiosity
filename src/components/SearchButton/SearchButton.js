@@ -10,7 +10,9 @@ const SearchButton = () => {
   const { alert, setAlert } = alertContext;
 
   const onClick = () =>
-    sol === null && date === null ? setAlert(true) : getPhotos();
+    (sol === null && date === null) || date === ''
+      ? setAlert(true)
+      : getPhotos();
 
   return (
     <>
