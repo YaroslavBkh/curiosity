@@ -12,7 +12,6 @@ const DateSelector = () => {
     manifest && (
       <input
         type="date"
-        defaultValue={manifest.landing_date}
         min={manifest.landing_date}
         max={manifest.max_date}
         onInput={handleChange}
