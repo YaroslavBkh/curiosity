@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import QueryContext from '../../../context/queryContext';
+import QueryContext from '../../../context/query/queryContext';
 
 const RoverSelector = () => {
   const queryContext = useContext(QueryContext);

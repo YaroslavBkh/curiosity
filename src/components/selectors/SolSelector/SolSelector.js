@@ -3,17 +3,16 @@ import QueryContext from '../../../context/query/queryContext';
 
 const DateSelector = () => {
   const queryContext = useContext(QueryContext);
-  const { setDate, manifest } = queryContext;
+  const { setSol, manifest } = queryContext;
 
   const handleChange = e => {
-    setDate(e.target.value);
+    setSol(e.target.value);
   };
   return (
     manifest && (
       <input
-        type="date"
-        min={manifest.landing_date}
-        max={manifest.max_date}
+        type="number"
+        placeholder="Choose Martian Sol"
         onInput={handleChange}
       />
     )

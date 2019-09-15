@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import QueryContext from '../../../context/queryContext';
+import QueryContext from '../../../context/query/queryContext';
 
 const CameraSelector = () => {
   const queryContext = useContext(QueryContext);
@@ -13,7 +13,7 @@ const CameraSelector = () => {
     // Display cameras by actual presence on rovers
     <div>
       <select name="cameras" onChange={handleChange}>
-        <option value="all">Any</option>
+        <option value={null}>Any</option>
         <option value="FHAZ">Front Hazard Avoidance Camera/</option>
         <option value="NAVCAM">Navigation Camera</option>
         {rover === 'Curiosity' && (
