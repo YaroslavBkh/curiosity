@@ -10,7 +10,7 @@ import {
   SET_ROVER,
   GET_MANIFEST,
   GET_PHOTOS
-} from './types';
+} from '../types';
 
 const QueryState = props => {
   const { children } = props;

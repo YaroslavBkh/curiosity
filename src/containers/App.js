@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import './App.css';
-import QueryContext from '../context/queryContext';
+import QueryContext from '../context/query/queryContext';
 import CameraSelector from '../components/selectors/CameraSelector/CameraSelector';
 import DateSelector from '../components/selectors/DateSelector/DateSelector';
 import SolSelector from '../components/selectors/SolSelector/SolSelector';

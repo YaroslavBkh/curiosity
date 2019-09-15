@@ -4,3 +4,4 @@ export const SET_SOL = 'SET_SOL';
 export const SET_ROVER = 'SET_ROVER';
 export const GET_MANIFEST = 'GET_MANIFEST';
 export const GET_PHOTOS = 'GET_PHOTOS';
+export const SET_ALERT = 'SET_ALERT';

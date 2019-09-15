@@ -5,7 +5,7 @@ import {
   SET_ROVER,
   GET_MANIFEST,
   GET_PHOTOS
-} from './types';
+} from '../types';
 
 export default (state, action) => {
   switch (action.type) {
