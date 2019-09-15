@@ -9,7 +9,7 @@ const QueryState = props => {
   const { children } = props;
 
   const initialState = {
-    cam: 'all',
+    cam: null,
     date: null,
     rover: 'Curiosity',
     manifest: null
