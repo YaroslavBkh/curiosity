@@ -12,7 +12,9 @@ const DateSelector = () => {
     manifest && (
       <input
         type="number"
-        placeholder="Choose Martian Sol"
+        min="1"
+        max={manifest.max_sol}
+        placeholder="Sol"
         onInput={handleChange}
       />
     )
