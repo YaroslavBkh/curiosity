@@ -21,7 +21,7 @@ const QueryState = props => {
     sol: null,
     rover: 'Curiosity',
     manifest: null,
-    photos: []
+    photos: null
   };
   const [state, dispatch] = useReducer(queryReducer, initialState);
 
@@ -68,7 +68,7 @@ const QueryState = props => {
       `https://api.nasa.gov/mars-photos/api/v1/rovers/${state.rover}/photos?${
         state.date ? `earth_date=${state.date}&` : ''
       }${state.sol ? `sol=${state.sol}&` : ''}${
-        state.cam ? `camera=${state.cam}&` : ''
+        state.cam !== null && state.cam !== '' ? `camera=${state.cam}&` : ''
       }api_key=WsCYjncMpMrMSOgnpMTXB33ATSzk0v2spwCccz4d`
     );
 
