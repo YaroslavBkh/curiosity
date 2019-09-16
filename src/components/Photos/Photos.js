@@ -6,12 +6,12 @@ const Photos = () => {
   const queryContext = useContext(QueryContext);
   const { photos } = queryContext;
 
-  // (() => {photos ? photos.map})();
-
   return (
     <div>
       {photos &&
+        photos.length > 0 &&
         photos.map(photo => <PhotoCard key={photo.id} photo={photo} />)}
+      {photos && photos.length <= 0 && <h5>No match. Try another query</h5>}
     </div>
   );
 };
