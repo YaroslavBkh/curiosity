@@ -6,6 +6,7 @@ import DateSelector from '../components/selectors/DateSelector/DateSelector';
 import SolSelector from '../components/selectors/SolSelector/SolSelector';
 import RoverSelector from '../components/selectors/RoverSelector/RoverSelector';
 import SearchButton from '../components/SearchButton/SearchButton';
+import Photos from '../components/Photos/Photos';
 
 function App() {
   const queryContext = useContext(QueryContext);
@@ -23,6 +24,7 @@ function App() {
       <SolSelector />
       <RoverSelector />
       <SearchButton />
+      <Photos />
     </div>
   );
 }
