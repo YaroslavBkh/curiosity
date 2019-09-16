@@ -13,15 +13,15 @@ const CameraSelector = () => {
     // Display cameras by actual presence on rovers
     <div>
       <select name="cameras" onChange={handleChange}>
-        <option value="">Any</option>
-        <option value="FHAZ">Front Hazard Avoidance Camera/</option>
+        <option value="">Camera: any</option>
+        <option value="FHAZ">Front Hazard Avoidance Camera</option>
         <option value="NAVCAM">Navigation Camera</option>
         {rover === 'Curiosity' && (
           <>
             <option value="MAST">Mast Camera</option>
             <option value="CHEMCAM">Chemistry and Camera Complex</option>
             <option value="MAHLI">Mars Hand Lens Imager</option>
-            <option value="MARDI">Mars Descent Imager/</option>
+            <option value="MARDI">Mars Descent Imager</option>
           </>
         )}
         <option value="RHAZ">Rear Hazard Avoidance Camera</option>
