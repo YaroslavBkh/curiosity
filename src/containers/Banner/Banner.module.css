@@ -1,0 +1,9 @@
+.banner {
+  height: 100vh;
+  background-image: url('../../assets/banner.jpg');
+  background-size: cover;
+}
+
+.header {
+	margin-top: 1rem;
+}
