@@ -10,13 +10,20 @@ const DateSelector = () => {
   };
   return (
     manifest && (
-      <input
-        type="number"
-        min="1"
-        max={manifest.max_sol}
-        placeholder="Sol"
-        onInput={handleChange}
-      />
+      <div>
+        <label htmlFor="sol">
+          Sol
+          <input
+            type="number"
+            id="sol"
+            defaultValue="1"
+            min="1"
+            max={manifest.max_sol}
+            placeholder="Sol"
+            onInput={handleChange}
+          />
+        </label>
+      </div>
     )
   );
 };

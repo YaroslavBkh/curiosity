@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Inputs.module.css';
 import CameraSelector from './CameraSelector/CameraSelector';
 import DateSelector from './DateSelector/DateSelector';
 import SolSelector from './SolSelector/SolSelector';
@@ -7,7 +8,7 @@ import SearchButton from '../SearchButton/SearchButton';
 
 const Selectors = () => {
   return (
-    <div>
+    <div className={styles.inputs}>
       <CameraSelector />
       <DateSelector />
       <SolSelector />

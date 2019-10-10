@@ -9,11 +9,16 @@ const RoverSelector = () => {
     setRover(e.target.value);
   };
   return (
-    <select name="rover" id="rover" onChange={handleChange}>
-      <option value="Curiosity">Curiosity</option>
-      <option value="Opportunity">Opportunity</option>
-      <option value="Spirit">Spirit</option>
-    </select>
+    <div>
+      <label htmlFor="rover">
+        Rover
+        <select name="rover" id="rover" onChange={handleChange}>
+          <option value="Curiosity">Curiosity</option>
+          <option value="Opportunity">Opportunity</option>
+          <option value="Spirit">Spirit</option>
+        </select>
+      </label>
+    </div>
   );
 };
 

@@ -18,7 +18,7 @@ const QueryState = props => {
   const initialState = {
     cam: null,
     date: null,
-    sol: null,
+    sol: 1,
     rover: 'Curiosity',
     manifest: null,
     photos: null

@@ -10,12 +10,18 @@ const DateSelector = () => {
   };
   return (
     manifest && (
-      <input
-        type="date"
-        min={manifest.landing_date}
-        max={manifest.max_date}
-        onInput={handleChange}
-      />
+      <div>
+        <label htmlFor="date">
+          Earth date
+          <input
+            id="date"
+            type="date"
+            min={manifest.landing_date}
+            max={manifest.max_date}
+            onInput={handleChange}
+          />
+        </label>
+      </div>
     )
   );
 };
