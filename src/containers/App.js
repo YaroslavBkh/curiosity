@@ -6,10 +6,11 @@ import Photos from '../components/Photos/Photos';
 
 function App() {
   const queryContext = useContext(QueryContext);
-  const { rover, getManifest } = queryContext;
+  const { rover, getManifest, setCam } = queryContext;
 
   useEffect(() => {
     getManifest(rover);
+    setCam(null);
     // eslint-disable-next-line
   }, [rover]);
 
