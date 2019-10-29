@@ -5,7 +5,7 @@ import AlertContext from '../../context/alert/alertContext';
 
 const SearchButton = () => {
   const queryContext = useContext(QueryContext);
-  const { getPhotos, sol, date } = queryContext;
+  const { getPhotos, sol, date, param } = queryContext;
   const alertContext = useContext(AlertContext);
   const { alert, setAlert } = alertContext;
 
@@ -17,7 +17,7 @@ const SearchButton = () => {
   return (
     <>
       <button type="button" onClick={onClick}>
-        Search
+        {param ? `Search by ${param}` : `Search`}
       </button>
       {alert && <Alert />}
     </>

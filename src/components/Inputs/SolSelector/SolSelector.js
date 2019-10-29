@@ -3,11 +3,13 @@ import QueryContext from '../../../context/query/queryContext';
 
 const DateSelector = () => {
   const queryContext = useContext(QueryContext);
-  const { setSol, manifest } = queryContext;
+  const { setSol, setParam, manifest } = queryContext;
 
-  const handleChange = e => {
+  const handleInput = e => {
     setSol(e.target.value);
+    setParam(e.target.id);
   };
+
   return (
     manifest && (
       <div>
@@ -16,11 +18,10 @@ const DateSelector = () => {
           <input
             type="number"
             id="sol"
-            defaultValue="1"
-            min="1"
+            min="0"
+            placeholder="0"
             max={manifest.max_sol}
-            placeholder="Sol"
-            onInput={handleChange}
+            onInput={handleInput}
           />
         </label>
       </div>

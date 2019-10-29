@@ -10,6 +10,7 @@ function App() {
 
   useEffect(() => {
     getManifest(rover);
+    // eslint-disable-next-line
   }, [rover]);
 
   return (

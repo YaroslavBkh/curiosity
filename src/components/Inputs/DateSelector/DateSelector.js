@@ -1,13 +1,26 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import QueryContext from '../../../context/query/queryContext';
 
 const DateSelector = () => {
   const queryContext = useContext(QueryContext);
-  const { setDate, manifest } = queryContext;
+  const { setDate, setParam, manifest } = queryContext;
+  const dateInput = useRef(null);
 
-  const handleChange = e => {
-    setDate(e.target.value);
+  const initInput = () => {
+    setDate(manifest.landing_date);
+    dateInput.current.value = manifest.landing_date;
   };
+
+  useEffect(() => {
+    manifest && initInput();
+    // eslint-disable-next-line
+  }, [manifest]);
+
+  const handleInput = e => {
+    setDate(e.target.value);
+    setParam(e.target.id);
+  };
+
   return (
     manifest && (
       <div>
@@ -18,7 +31,8 @@ const DateSelector = () => {
             type="date"
             min={manifest.landing_date}
             max={manifest.max_date}
-            onInput={handleChange}
+            onInput={handleInput}
+            ref={dateInput}
           />
         </label>
       </div>
