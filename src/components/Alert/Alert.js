@@ -14,7 +14,7 @@ const Alert = () => {
 
   return (
     <button type="button" onClick={handleClick}>
-      okay
+      Please enter a valid date to search by
     </button>
   );
 };
