@@ -1,0 +1,25 @@
+.banner {
+  height: 100vh;
+  background-image: url('../../assets/banner.jpg');
+  background-size: cover;
+  text-align: end;
+}
+
+.header {
+  margin: 0;
+  align-self: center;
+}
+
+.controlPanel {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 1rem 1rem 0 0;
+  padding: 1rem;
+  background-color: rgba(226, 117, 66, 0.918);
+  border-radius: 10px;
+}
+
+.subheader {
+  margin: 0.5rem auto;
+}

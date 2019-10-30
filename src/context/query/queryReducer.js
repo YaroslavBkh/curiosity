@@ -4,7 +4,8 @@ import {
   SET_SOL,
   SET_ROVER,
   GET_MANIFEST,
-  GET_PHOTOS
+  GET_PHOTOS,
+  SET_PARAM
 } from '../types';
 
 export default (state, action) => {
@@ -17,14 +18,12 @@ export default (state, action) => {
     case SET_DATE:
       return {
         ...state,
-        date: action.payload,
-        sol: null
+        date: action.payload
       };
     case SET_SOL:
       return {
         ...state,
-        sol: action.payload,
-        date: null
+        sol: action.payload
       };
     case SET_ROVER:
       return {
@@ -47,6 +46,11 @@ export default (state, action) => {
       return {
         ...state,
         photos: action.payload
+      };
+    case SET_PARAM:
+      return {
+        ...state,
+        param: action.payload
       };
     default:
       return state;

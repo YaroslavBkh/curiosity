@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './PhotoCard.module.css';
 
 const PhotoCard = ({ photo }) => {
+  const { card } = styles;
   return (
-    <div>
+    <div className={card}>
       <a href={photo.img_src} target="new">
-        <img src={photo.img_src} width="300" alt="Mars surface" />
+        <img src={photo.img_src} width="100%" alt="Mars surface" />
       </a>
     </div>
   );

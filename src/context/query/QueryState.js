@@ -7,6 +7,7 @@ import {
   SET_CAM,
   SET_DATE,
   SET_SOL,
+  SET_PARAM,
   SET_ROVER,
   GET_MANIFEST,
   GET_PHOTOS
@@ -18,8 +19,9 @@ const QueryState = props => {
   const initialState = {
     cam: null,
     date: null,
-    sol: null,
+    sol: 0,
     rover: 'Curiosity',
+    param: 'sol',
     manifest: null,
     photos: null
   };
@@ -53,6 +55,13 @@ const QueryState = props => {
     });
   };
 
+  const setParam = param => {
+    dispatch({
+      type: SET_PARAM,
+      payload: param
+    });
+  };
+
   const getManifest = async rover => {
     const res = await axios.get(
       `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=WsCYjncMpMrMSOgnpMTXB33ATSzk0v2spwCccz4d`
@@ -66,8 +75,8 @@ const QueryState = props => {
   const getPhotos = async () => {
     const res = await axios.get(
       `https://api.nasa.gov/mars-photos/api/v1/rovers/${state.rover}/photos?${
-        state.date ? `earth_date=${state.date}&` : ''
-      }${state.sol ? `sol=${state.sol}&` : ''}${
+        state.param === 'date' ? `earth_date=${state.date}&` : ''
+      }${state.param === 'sol' ? `sol=${state.sol}&` : ''}${
         state.cam !== null && state.cam !== '' ? `camera=${state.cam}&` : ''
       }api_key=WsCYjncMpMrMSOgnpMTXB33ATSzk0v2spwCccz4d`
     );
@@ -87,10 +96,12 @@ const QueryState = props => {
         rover: state.rover,
         manifest: state.manifest,
         photos: state.photos,
+        param: state.param,
         setCam,
         setDate,
         setSol,
         setRover,
+        setParam,
         getManifest,
         getPhotos
       }}
