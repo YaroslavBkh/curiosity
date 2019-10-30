@@ -6,7 +6,7 @@ import Photos from '../components/Photos/Photos';
 
 function App() {
   const queryContext = useContext(QueryContext);
-  const { rover, getManifest, setCam } = queryContext;
+  const { rover, getManifest, setCam, photos } = queryContext;
 
   useEffect(() => {
     getManifest(rover);
@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="wrapper">
       <Banner />
-      <Photos />
+      {photos && <Photos />}
     </div>
   );
 }
