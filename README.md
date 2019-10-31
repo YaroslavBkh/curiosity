@@ -1,2 +1,2 @@
 Work in progress.  
-Proper interface on the way
+Proper interface and pagination on the way
