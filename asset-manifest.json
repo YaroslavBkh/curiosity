@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/curiosity/static/css/main.fdda3a9b.css",
-    "main.js": "/curiosity/static/js/main.188d6aa2.js",
+    "main.css": "/curiosity/static/css/main.33a100db.css",
+    "main.js": "/curiosity/static/js/main.92903a12.js",
     "static/media/banner.jpg": "/curiosity/static/media/banner.ff3eff2d2b90b771042e.jpg",
     "index.html": "/curiosity/index.html",
-    "main.fdda3a9b.css.map": "/curiosity/static/css/main.fdda3a9b.css.map",
-    "main.188d6aa2.js.map": "/curiosity/static/js/main.188d6aa2.js.map"
+    "main.33a100db.css.map": "/curiosity/static/css/main.33a100db.css.map",
+    "main.92903a12.js.map": "/curiosity/static/js/main.92903a12.js.map"
   },
   "entrypoints": [
-    "static/css/main.fdda3a9b.css",
-    "static/js/main.188d6aa2.js"
+    "static/css/main.33a100db.css",
+    "static/js/main.92903a12.js"
   ]
 }
