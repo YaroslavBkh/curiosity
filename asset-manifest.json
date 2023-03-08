@@ -1,18 +1,14 @@
 {
   "files": {
-    "main.css": "/curiosity/static/css/main.037cf44a.chunk.css",
-    "main.js": "/curiosity/static/js/main.e5367a28.chunk.js",
-    "main.js.map": "/curiosity/static/js/main.e5367a28.chunk.js.map",
-    "runtime~main.js": "/curiosity/static/js/runtime~main.7b64669a.js",
-    "runtime~main.js.map": "/curiosity/static/js/runtime~main.7b64669a.js.map",
-    "static/css/2.0971e70a.chunk.css": "/curiosity/static/css/2.0971e70a.chunk.css",
-    "static/js/2.35feffe8.chunk.js": "/curiosity/static/js/2.35feffe8.chunk.js",
-    "static/js/2.35feffe8.chunk.js.map": "/curiosity/static/js/2.35feffe8.chunk.js.map",
+    "main.css": "/curiosity/static/css/main.fdda3a9b.css",
+    "main.js": "/curiosity/static/js/main.188d6aa2.js",
+    "static/media/banner.jpg": "/curiosity/static/media/banner.ff3eff2d2b90b771042e.jpg",
     "index.html": "/curiosity/index.html",
-    "precache-manifest.0be0b56ac75874107fef1a489b149ed0.js": "/curiosity/precache-manifest.0be0b56ac75874107fef1a489b149ed0.js",
-    "service-worker.js": "/curiosity/service-worker.js",
-    "static/css/2.0971e70a.chunk.css.map": "/curiosity/static/css/2.0971e70a.chunk.css.map",
-    "static/css/main.037cf44a.chunk.css.map": "/curiosity/static/css/main.037cf44a.chunk.css.map",
-    "static/media/Banner.module.css": "/curiosity/static/media/banner.81baab11.jpg"
-  }
+    "main.fdda3a9b.css.map": "/curiosity/static/css/main.fdda3a9b.css.map",
+    "main.188d6aa2.js.map": "/curiosity/static/js/main.188d6aa2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fdda3a9b.css",
+    "static/js/main.188d6aa2.js"
+  ]
 }
