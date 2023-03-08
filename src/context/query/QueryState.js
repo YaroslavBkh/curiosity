@@ -64,7 +64,7 @@ const QueryState = props => {
 
   const getManifest = async rover => {
     const res = await axios.get(
-      `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=WsCYjncMpMrMSOgnpMTXB33ATSzk0v2spwCccz4d`
+      `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${process.env.REACT_APP_NASA_API_KEY}`
     );
     dispatch({
       type: GET_MANIFEST,
@@ -78,7 +78,7 @@ const QueryState = props => {
         state.param === 'date' ? `earth_date=${state.date}&` : ''
       }${state.param === 'sol' ? `sol=${state.sol}&` : ''}${
         state.cam !== null && state.cam !== '' ? `camera=${state.cam}&` : ''
-      }api_key=WsCYjncMpMrMSOgnpMTXB33ATSzk0v2spwCccz4d`
+      }api_key=${process.env.REACT_APP_NASA_API_KEY}`
     );
 
     dispatch({
